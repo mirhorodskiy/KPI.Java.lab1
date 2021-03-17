@@ -1,6 +1,6 @@
-package com.kpi.model;
+package com.kpi.model.domain;
 
-public class Flowers {
+public class Flower {
     private int id;
     private String title;
     private String type;
@@ -9,7 +9,7 @@ public class Flowers {
     private int price;
     private int count;
 
-    public Flowers(int id, String title, String type, String species, String subspecies, int price, int count) {
+    public Flower(int id, String title, String type, String species, String subspecies, int price, int count) {
         this.id = id;
         this.title = title;
         this.type = type;
@@ -49,7 +49,7 @@ public class Flowers {
 
     @Override
     public String toString() {
-        return "Flowers{" +
+        return "Flower{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", type='" + type + '\'' +
