@@ -19,7 +19,6 @@ public class InputUtility {
         String input = SCANNER.next();
         try {
             Validator.isNumber(input);
-//            Validator.checkPositiveInt(Integer.parseInt(input));
         } catch (InvalidInputRuntimeException e) {
             view.printMessage(e.getMessage() + "\n");
             return inputIntValue(view, message);

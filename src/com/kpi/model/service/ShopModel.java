@@ -23,10 +23,6 @@ public class ShopModel {
         return Arrays.copyOf(this.flowers, this.flowers.length * 2);
     }
 
-    /**
-     * This method add flower to shop
-     * @param flower
-     */
     public void addFlower(Flower flower) {
         if (flowersCount == flowers.length){
             this.flowers = expandArray();
