@@ -2,21 +2,21 @@ package com.kpi.controller;
 
 import com.kpi.model.domain.Flower;
 import com.kpi.model.service.ShopModel;
+import com.kpi.model.service.utility.FileIOUtility;
 import com.kpi.model.service.utility.InputUtility;
 import com.kpi.view.ShopView;
 
 import static com.kpi.view.ViewConstant.*;
 
 public class ShopController {
-    private ShopModel model = new ShopModel();
+    private ShopModel model = new ShopModel(FileIOUtility.FILE_NAME);
     private ShopView view = new ShopView();
 
     public void menu() {
         while (true) {
             view.printMessage(MAIN_MENU);
             switch (InputUtility.inputIntValue(view, INPUT_MAIN_MENU_OPTION)) {
-                case 0:
-                    return;
+
                 case 1:
                     model.addFlower(new Flower(
                             InputUtility.inputIntPositiveValue(view, INPUT_FLOWER_ID),
@@ -42,6 +42,20 @@ public class ShopController {
                     break;
                 default:
                     view.printMessage(WRONG_INPUT_DATA);
+                case 0:
+                    view.printMessage(SAVING_DATA);
+                    while (true) {
+                        switch (InputUtility.inputIntValue(view, SAVING_DATA_CHOICE)) {
+                            case 1:
+                                model.saveChanges(FileIOUtility.FILE_NAME);
+                                view.printMessage(DATA_UPDATING);
+                                return;
+                            case 2:
+                                return;
+                            default:
+                                view.printMessage(WRONG_INPUT_DATA);
+                        }
+                    }
             }
         }
     }

@@ -1,6 +1,8 @@
 package com.kpi.model.domain;
 
-public class Flower {
+import java.io.Serializable;
+
+public class Flower implements Serializable {
     private int id;
     private String title;
     private String type;

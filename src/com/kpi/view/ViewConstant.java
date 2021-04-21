@@ -14,6 +14,9 @@ public interface ViewConstant {
     String NO_SUCH_FLOWERS = "No such flowers!";
     String INPUT_MAIN_MENU_OPTION = "Selected option = ";
     String OUTPUT_ALL_FLOWERS = "All flowers in shop: ";
+    String SAVING_DATA = "Do you want to save changed data?\n";
+    String DATA_UPDATING = "Data have been updated!";
+    String SAVING_DATA_CHOICE = "1 - Save changed data" + "\n" + "2 - Cancel changes: ";
 
     String MAIN_MENU = "Main menu:" + "\n"
             + "1 - Add flower to the shop" + "\n"
