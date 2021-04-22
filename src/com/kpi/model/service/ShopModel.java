@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class ShopModel {
 
-    ArrayList<Flower> flowers = new ArrayList<>();
+    private ArrayList<Flower> flowers = new ArrayList<>();
 
     public ShopModel(String filename) {
         flowers = (ArrayList<Flower>) FileIOUtility.readArrayUtility(filename);
@@ -30,7 +30,6 @@ public class ShopModel {
 
     public void addFlower(Flower flower) {
         flowers.add(flower);
-        //FileIOUtility.writeUtility("res.txt", flower);
     }
 
     public void saveChanges(String filename) {

@@ -48,6 +48,7 @@ public class ShopController {
                         switch (InputUtility.inputIntValue(view, SAVING_DATA_CHOICE)) {
                             case 1:
                                 model.saveChanges(FileIOUtility.FILE_NAME);
+                                FileIOUtility.writeFile(model.toString(), FileIOUtility.LOG_FILE);
                                 view.printMessage(DATA_UPDATING);
                                 return;
                             case 2:
