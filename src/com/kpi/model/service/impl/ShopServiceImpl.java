@@ -1,39 +1,39 @@
-package com.kpi.model.service;
+package com.kpi.model.service.impl;
 
 import com.kpi.model.domain.Flower;
-import com.kpi.model.service.utility.FileIOUtility;
+import com.kpi.model.service.ShopService;
 
+import java.io.*;
+import java.util.Date;
+import java.util.List;
 
-import java.util.ArrayList;
+public class ShopServiceImpl implements ShopService {
+    private static final String FILE_NAME = "data.txt";
+    private static final String OUTER = "Updated: ";
+    private static final String LOG_FILE = "log.txt";
+    private List<Flower> flowers;
 
-public class ShopModel {
-
-    private ArrayList<Flower> flowers = new ArrayList<>();
-
-    public ShopModel(String filename) {
-        flowers = (ArrayList<Flower>) FileIOUtility.readArrayUtility(filename);
+    public void writeFile(String text) throws IOException {
+        try (FileWriter writer = new FileWriter(LOG_FILE, true)) {
+            writer.write(OUTER + new Date().toString() + "\n" + text + "\n");
+            writer.flush();
+        }
     }
 
+    public void readFlowersArray() throws Exception {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
+            flowers = (List<Flower>) inputStream.readObject();
+        }
+    }
 
-
-//    private Flower[] expandArray() {
-//        return Arrays.copyOf(this.flowers, this.flowers.length * 2);
-//    }
-//
-//    public void addFlower(Flower flower) {
-//        if (flowersCount == flowers.length){
-//            this.flowers = expandArray();
-//        }
-//        flowers[flowersCount] = flower;
-//        flowersCount++;
-//    }
+    public void saveChanges() throws IOException {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
+            outputStream.writeObject(flowers);
+        }
+    }
 
     public void addFlower(Flower flower) {
         flowers.add(flower);
-    }
-
-    public void saveChanges(String filename) {
-        FileIOUtility.writeArrayUtility(filename, flowers);
     }
 
     public String getFloweringIndoorFlowersAndPrices() {
@@ -66,8 +66,8 @@ public class ShopModel {
 
     public String getListOfFlowers() {
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < flowers.size(); i++) {
-            builder.append(flowers.get(i).toString()).append("\n");
+        for (Flower flower : flowers) {
+            builder.append(flower.toString()).append("\n");
         }
         return builder.toString();
     }

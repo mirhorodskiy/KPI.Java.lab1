@@ -1,11 +1,11 @@
-package com.kpi.model.service.utility;
+package com.kpi.view;
 
 import com.kpi.model.exсeptions.InvalidInputRuntimeException;
-import com.kpi.view.ShopView;
+import com.kpi.model.service.utility.Validator;
 
 import java.util.Scanner;
 
-public class InputUtility {
+public class ConsoleInput {
 
     private static final Scanner SCANNER = new Scanner(System.in);
 
