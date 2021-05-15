@@ -7,3 +7,26 @@ ShopModel{flowersCount=4, flowersArray=[Flower{id=1, title='aaa', type='aa', spe
 
 Updated: Tue Apr 27 23:05:56 EEST 2021
 ShopModel{flowersCount=5, flowersArray=[Flower{id=1, title='aaa', type='aa', species='a', subspecies='aaaa', price=30, count=59}, Flower{id=33, title='bbb', type='bbb', species='b', subspecies='bbbb', price=34, count=5555}, Flower{id=45, title='qwer', type='ty', species='ui', subspecies='op', price=300, count=15000}, Flower{id=2, title='asd', type='aa', species='sddsd', subspecies='zxcc', price=23, count=10000}, Flower{id=88, title='asdasd', type='asdasd', species='asdasd', subspecies='asd', price=444, count=12}]}
+Updated: Thu Apr 29 15:25:14 EEST 2021
+
+Updated: Thu Apr 29 15:27:22 EEST 2021
+Type: Rose, price: 55
+
+Updated: Thu Apr 29 15:27:39 EEST 2021
+ShopModel{flowersCount=7, flowersArray=[Flower{id=1, title='aaa', type='aa', species='a', subspecies='aaaa', price=30, count=59}, Flower{id=33, title='bbb', type='bbb', species='b', subspecies='bbbb', price=34, count=5555}, Flower{id=45, title='qwer', type='ty', species='ui', subspecies='op', price=300, count=15000}, Flower{id=2, title='asd', type='aa', species='sddsd', subspecies='zxcc', price=23, count=10000}, Flower{id=88, title='asdasd', type='asdasd', species='asdasd', subspecies='asd', price=444, count=12}, Flower{id=193, title='Rose', type='indoor', species='flowering', subspecies='eeqwe', price=55, count=88}, Flower{id=90, title='Orchid', type='flowering', species='indoor', subspecies='aasdasd', price=150, count=55}]}
+Updated: Thu Apr 29 15:28:54 EEST 2021
+Type: Rose, price: 55
+Type: Orchid, price: 200
+
+Updated: Thu Apr 29 15:29:11 EEST 2021
+ShopModel{flowersCount=8, flowersArray=[Flower{id=1, title='aaa', type='aa', species='a', subspecies='aaaa', price=30, count=59}, Flower{id=33, title='bbb', type='bbb', species='b', subspecies='bbbb', price=34, count=5555}, Flower{id=45, title='qwer', type='ty', species='ui', subspecies='op', price=300, count=15000}, Flower{id=2, title='asd', type='aa', species='sddsd', subspecies='zxcc', price=23, count=10000}, Flower{id=88, title='asdasd', type='asdasd', species='asdasd', subspecies='asd', price=444, count=12}, Flower{id=193, title='Rose', type='indoor', species='flowering', subspecies='eeqwe', price=55, count=88}, Flower{id=90, title='Orchid', type='flowering', species='indoor', subspecies='aasdasd', price=150, count=55}, Flower{id=67, title='Orchid', type='indoor', species='flowering', subspecies='asdasd', price=200, count=55}]}
+Updated: Thu May 13 15:24:22 EEST 2021
+Flowering indoor flowers: Type: Rose, price: 55
+Type: Orchid, price: 200
+
+Updated: Thu May 13 15:24:57 EEST 2021
+Flowering indoor flowers: Type: Rose, price: 55
+Type: Orchid, price: 200
+
+Updated: Thu May 13 15:25:54 EEST 2021
+ShopModel{flowersCount=8, flowersArray=[Flower{id=1, title='aaa', type='aa', species='a', subspecies='aaaa', price=30, count=59}, Flower{id=33, title='bbb', type='bbb', species='b', subspecies='bbbb', price=34, count=5555}, Flower{id=45, title='qwer', type='ty', species='ui', subspecies='op', price=300, count=15000}, Flower{id=2, title='asd', type='aa', species='sddsd', subspecies='zxcc', price=23, count=10000}, Flower{id=88, title='asdasd', type='asdasd', species='asdasd', subspecies='asd', price=444, count=12}, Flower{id=193, title='Rose', type='indoor', species='flowering', subspecies='eeqwe', price=55, count=88}, Flower{id=90, title='Orchid', type='flowering', species='indoor', subspecies='aasdasd', price=150, count=55}, Flower{id=67, title='Orchid', type='indoor', species='flowering', subspecies='asdasd', price=200, count=55}]}

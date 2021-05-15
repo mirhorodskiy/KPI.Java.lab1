@@ -1,36 +1,50 @@
 package com.kpi.model.service.impl;
 
 import com.kpi.model.domain.Flower;
-import com.kpi.model.service.ShopService;
+import com.kpi.model.service.FileIO;
+import com.kpi.model.service.ShopModel;
 
-import java.io.*;
-import java.util.Date;
+
+import java.io.IOException;
 import java.util.List;
 
-public class ShopServiceImpl implements ShopService {
-    private static final String FILE_NAME = "data.txt";
-    private static final String OUTER = "Updated: ";
-    private static final String LOG_FILE = "log.txt";
+public class ShopModelImpl implements ShopModel {
+
+    private final FileIO fileIO = new FileIO();
     private List<Flower> flowers;
 
+//    public void writeFile(String text) throws IOException {
+//        try (FileWriter writer = new FileWriter(LOG_FILE, true)) {
+//            writer.write(OUTER + new Date().toString() + "\n" + text + "\n");
+//            writer.flush();
+//        }
+//    }
+//
+//    public void readFlowersArray() throws Exception {
+//        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
+//            flowers = (List<Flower>) inputStream.readObject();
+//        }
+//    }
+//
+//    public void saveChanges() throws IOException {
+//        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
+//            outputStream.writeObject(flowers);
+//        }
+//    }
+
+    public ShopModelImpl() throws IOException, ClassNotFoundException {
+        this.flowers = fileIO.readFlowersArray();
+    }
+
     public void writeFile(String text) throws IOException {
-        try (FileWriter writer = new FileWriter(LOG_FILE, true)) {
-            writer.write(OUTER + new Date().toString() + "\n" + text + "\n");
-            writer.flush();
-        }
+        fileIO.writeFile(text);
     }
 
-    public void readFlowersArray() throws Exception {
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
-            flowers = (List<Flower>) inputStream.readObject();
-        }
+
+    public void saveChanges(List<Flower> flowers) throws IOException {
+        fileIO.saveChanges(flowers);
     }
 
-    public void saveChanges() throws IOException {
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
-            outputStream.writeObject(flowers);
-        }
-    }
 
     public void addFlower(Flower flower) {
         flowers.add(flower);
@@ -71,6 +85,12 @@ public class ShopServiceImpl implements ShopService {
         }
         return builder.toString();
     }
+
+    public List<Flower> getFlowers() {
+        return flowers;
+    }
+
+
 
     @Override
     public String toString() {
